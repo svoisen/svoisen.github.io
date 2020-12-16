@@ -1,8 +1,9 @@
 :root {
     --content-width: 660px;
     --cyan: #268bd2;
-    --yellow: rgb(255, 255, 100);
+    --yellow: rgba(255, 255, 100, 0.8);
     --magenta: #d33682;
+    --light-grey: rgb(230, 230, 230);
 }
 
 html {
@@ -16,49 +17,88 @@ body {
     padding: 0;
     font-family: 'Work Sans', sans-serif;
     color: black;
-    background: rgb(232,232,232);
-    background: linear-gradient(180deg, rgba(232,232,232,1) 0%, rgba(255,255,255,1) 100%);
+    background: var(--light-grey);
+    background: linear-gradient(180deg, var(--light-grey) 0%, white 100%);
     height: 100%;
-}
-
-a {
-    color: var(--cyan);
-    text-decoration-thickness: 0.4rem;
-    text-decoration-color: var(--yellow);
-    text-decoration-skip-ink: none;
-    transition: 0.5s;
-}
-
-a:hover {
-    color: var(--magenta);
-    transition: 0.5s;
 }
 
 main {
     margin: 0 auto;
-    width: var(--content-width);
+    padding: 0 40px;
+    max-width: var(--content-width)
 }
 
 header {
     border-top: 20px solid var(--cyan);
-    padding-top: 40px;
+    padding-top: 3rem;
     text-align: center;
 }
 
 footer {
-    width: var(--content-width);
+    margin: 0 auto;
+    max-width: var(--content-width);
+    padding: 0 40px;
     text-align: center;
     font-size: 2rem;
     margin: 3rem auto;
 }
 
-footer ul {
+a:hover {
+    color: var(--magenta);
+    transition: 0.3s;
+}
+
+header > h1 {
+    font-family: 'Taviraj', serif;
+    font-size: 3rem;
+    margin: 0;
+}
+
+main > p {
+    position: relative;
+    z-index: 0;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+}
+
+main > p > a {
+    display: inline-block;
+    white-space: nowrap;
+    position: relative;
+    color: var(--cyan);
+    text-decoration-thickness: 0.4rem;
+    text-decoration-color: var(--yellow);
+    text-decoration-skip-ink: none;
+    transition: 0.3s;
+}
+
+main > p > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2rem;
+    bottom: 0;
+    left: 0;
+    background-color: var(--yellow);
+    visibility: hidden;
+    transform: scaleY(0);
+    transition: all 0.3s ease-in-out 0s;
+    transform-origin: 50% 100% 0;
+    z-index: -1;
+}
+
+main > p > a:hover::before {
+    visibility: visible;
+    transform: scaleY(1);
+}
+
+footer > ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-footer ul li {
+footer > ul > li {
     margin: 0;
     padding: 0 0.5rem;
     display: inline;
@@ -67,24 +107,11 @@ footer ul li {
 footer a {
     text-decoration: none;
     color: black;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 
-footer a:hover {
-    color: var(--magenta);
-    transition: 0.5s;
-}
-
-p {
-    font-size: 1.5rem;
-    line-height: 2.2rem;
-    text-align: justify;
-}
-
-h1 {
-    font-family: 'Taviraj', serif;
-    font-size: 3rem;
-    margin: 0;
+header > h1 > .em {
+    font-style: italic;
 }
 
 .headshot-wrap {
@@ -93,8 +120,4 @@ h1 {
 
 .headshot {
     clip-path: circle(50%);
-}
-
-.em {
-    font-style: italic;
 }

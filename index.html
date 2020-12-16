@@ -6,7 +6,7 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@svoisen">
     <meta name="twitter:title" content="Sean Voisen">
-    <meta name="twitter:description" content="Trying to make computers a little better for productivity and creative expression.">
+    <meta name="twitter:description" content="Trying to make computers better for productivity and creative expression.">
     <meta name="twitter:image" content="https://seanvoisen.com/me.jpg">
     <title>Sean Voisen</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -18,13 +18,14 @@
 <body>
     <header>
         <div class="headshot-wrap">
-            <img class="headshot" src="me.jpg">
+            <img class="headshot" src="me.jpg" alt="A photo of Sean.">
         </div>
         <h1>Hello, I’m <span class="em">Sean</span>.</h1>
     </header>
     <main>
-        <p>I work on making computing—especially computing on the web—better for human productivity and creative expression. Currently, I'm helping build new creative tools at Adobe. In the past, I managed engineering teams responsible for layout, CSS, and accessibility for Firefox at Mozilla.
-        <p>I build software, lead teams, and <a href="https://situated.blog">write about both</a>. I'm originally from California and live with my wife and kids in the San Francisco Bay area.</p>
+        <!-- <p>I enjoy making computing—especially computing on the web—better for human productivity and creative expression. Currently, I'm helping build new creative tools at Adobe. In the past, I managed engineering teams responsible for layout, CSS, and accessibility for Firefox at Mozilla. -->
+        <p>I enjoy making computing—especially computing on the web—better for human productivity and creative expression. Currently, I manage the engineering team responsible for page layout and CSS in Firefox. In the past, I helped build creative tools at Adobe and Madefire.</p>
+        <p>I build software, lead teams, and <a href="https://situated.blog" title="Read my blog.">write.</a> I'm originally from California and live with my wife and kids in the San Francisco Bay area.</p>
         <p>The best way to reach me is <a class="eml-protected" href="#">e-mail</a>, but you can also occasionally <a href="https://twitter.com/svoisen" title="My Twitter profile.">find me on Twitter.</a></p>
     </main>
     <footer>
@@ -36,11 +37,10 @@
     </footer>
     <script>
         window.addEventListener('DOMContentLoaded', function() {
-            var allElements = document.getElementsByClassName('eml-protected');
-            var eml = decodeEmail('582b3d3936182e37312b3d3676372a3f');
-            for (var i = 0; i < allElements.length; i++) {
-                var el = allElements[i];
-                el.href = 'mailto:' + eml;
+            const allElements = document.getElementsByClassName('eml-protected');
+            const eml = decodeEmail('582b3d3936182e37312b3d3676372a3f');
+            for (let i = 0; i < allElements.length; i++) {
+                allElements[i].href = 'mailto:' + eml;
             }
         });
     </script>
